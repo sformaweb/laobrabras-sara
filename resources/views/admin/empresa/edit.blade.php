@@ -56,6 +56,14 @@
                                 type="email" name="email" value="{{ old('email', $empresa->email) }}" />
                         </div>
                         <div class="py-2">
+                            <label for="enderezo"
+                                class="block font-medium text-sm text-gray-700 {{ $errors->has('enderezo') ? ' text-red-400' : '' }}">{{ __('Enderezo') }}</label>
+                            <input id="enderezo"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('enderezo') ? ' border-red-400' : '' }}"
+                                type="text" name="enderezo"
+                                value="{{ old('enderezo', $empresa->enderezo) }}" />
+                        </div>
+                        <div class="py-2">
                             <label for="localidade"
                                 class="block font-medium text-sm text-gray-700 {{ $errors->has('localidade') ? ' text-red-400' : '' }}">{{ __('Localidade') }}</label>
                             <input id="localidade"
@@ -92,6 +100,13 @@
                                 type="text" name="telefono" value="{{ old('tfnomovil', $empresa->tfnomovil) }}" />
                         </div>
                         <div class="py-2">
+                            <label for="dataprimeirocontacto"
+                                class="block font-medium text-sm text-gray-700{{ $errors->has('dataprimeirocontacto') ? ' text-red-400' : '' }}">{{ __('Data primeiro contacto') }}</label>
+                            <input id="persoa_contacto"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('dataprimeirocontacto') ? ' border-red-400' : '' }}"
+                                type="date" name="dataprimeirocontacto" value="{{ old('dataprimeirocontacto', $empresa->dataprimeirocontacto) }}" />
+                        </div>
+                        <div class="py-2">
                             <label for="persoa_contacto"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('persoa_contacto') ? ' text-red-400' : '' }}">{{ __('Persoa de contacto') }}</label>
                             <input id="persoa_contacto"
@@ -112,11 +127,18 @@
                                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('ofertas_formacion') ? ' border-red-400' : '' }}"
                                 type="text" name="ofertas_formacion" value="{{ old('ofertas_formacion') }}" />
                         </div>
-                        <label for="notas"
-                            class="block font-medium text-sm text-gray-700{{ $errors->has('notas') ? ' text-red-400' : '' }}">{{ __('Notas') }}</label>
+                        <div class="py-2">
+                            <label for="orientador_id"
+                                class="block font-medium text-sm text-gray-700{{ $errors->has('orientador_id') ? ' text-red-400' : '' }}">{{ __('Orientador/a') }}</label>
+                            <input id="orientador_id"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('orientador_id') ? ' border-red-400' : '' }}"
+                                type="text" name="orientador_id" value="{{ old('orientador_id', $empresa->orientador_id) }}" />
+                        </div>
+                        <label for="observacions"
+                            class="block font-medium text-sm text-gray-700{{ $errors->has('observacions') ? ' text-red-400' : '' }}">{{ __('Observacións') }}</label>
                         <input id="notas"
-                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('notas') ? ' border-red-400' : '' }}"
-                            type="text" name="notas" value="{{ old('notas') }}" />
+                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('observacions') ? ' border-red-400' : '' }}"
+                            type="text" name="observacions" value="{{ old('observacions', $empresa->observacions) }}" />
                 </div>
 
 
