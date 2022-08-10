@@ -36,38 +36,40 @@
                         </ul>
                     @endif
                 </div>
-                <div class="w-full px-6 py-4 bg-white overflow-hidden">
+
+
+
+                <div class="grid grid-cols-6 gap-4">
                     <form method="POST" action="{{ route('empresa.update', $empresa->id) }}">
                         @csrf
                         @method('PUT')
-                        <div class="py-2">
+                        <div class="col-span-3">
                             <label for="nome"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('nome') ? ' text-red-400' : '' }}">{{ __('Nome') }}</label>
                             <input id="nome"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('nome') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50{{ $errors->has('nome') ? ' border-red-400' : '' }}"
                                 type="text" name="nome" value="{{ old('nome', $empresa->nome) }}" />
                         </div>
 
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="email"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('email') ? ' text-red-400' : '' }}">{{ __('Email') }}</label>
                             <input id="email"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('email') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50{{ $errors->has('email') ? ' border-red-400' : '' }}"
                                 type="email" name="email" value="{{ old('email', $empresa->email) }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="enderezo"
                                 class="block font-medium text-sm text-gray-700 {{ $errors->has('enderezo') ? ' text-red-400' : '' }}">{{ __('Enderezo') }}</label>
                             <input id="enderezo"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('enderezo') ? ' border-red-400' : '' }}"
-                                type="text" name="enderezo"
-                                value="{{ old('enderezo', $empresa->enderezo) }}" />
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50{{ $errors->has('enderezo') ? ' border-red-400' : '' }}"
+                                type="text" name="enderezo" value="{{ old('enderezo', $empresa->enderezo) }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="localidade"
                                 class="block font-medium text-sm text-gray-700 {{ $errors->has('localidade') ? ' text-red-400' : '' }}">{{ __('Localidade') }}</label>
                             <input id="localidade"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('localidade') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 {{ $errors->has('localidade') ? ' border-red-400' : '' }}"
                                 type="text" name="localidade"
                                 value="{{ old('localidade', $empresa->localidade) }}" />
                         </div>
@@ -78,80 +80,90 @@
                                 class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('poboacion') ? ' border-red-400' : '' }}"
                                 type="text" name="poboacion" value="{{ old('poboacion') }}" />
                         </div> --}}
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="actividade_id"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('actividade') ? ' text-red-400' : '' }}">{{ __('Actividade') }}</label>
                             <input id="actividade"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('actividade') ? ' border-red-400' : '' }}"
-                                type="text" name="actividade" value="{{ old('actividade_id', $empresa->actividade_id) }}" />
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 {{ $errors->has('actividade') ? ' border-red-400' : '' }}"
+                                type="text" name="actividade"
+                                value="{{ old('actividade_id', $empresa->actividade_id) }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="tfnofijo"
-                                class="block font-medium text-sm text-gray-700{{ $errors->has('telefono') ? ' text-red-400' : '' }}">{{ __('Teléfono fijo') }}</label>
+                                class="block font-medium text-sm text-gray-700{{ $errors->has('telefono') ? ' text-red-400' : '' }}">{{ __('Teléfono fixo') }}</label>
                             <input id="telefono"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('telefono') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('telefono') ? ' border-red-400' : '' }}"
                                 type="text" name="telefono" value="{{ old('tfnofijo', $empresa->tfnofijo) }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="tfnomovil"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('telefono') ? ' text-red-400' : '' }}">{{ __('Teléfono móbil') }}</label>
                             <input id="telefono"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('telefono') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('telefono') ? ' border-red-400' : '' }}"
                                 type="text" name="telefono" value="{{ old('tfnomovil', $empresa->tfnomovil) }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="dataprimeirocontacto"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('dataprimeirocontacto') ? ' text-red-400' : '' }}">{{ __('Data primeiro contacto') }}</label>
                             <input id="persoa_contacto"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('dataprimeirocontacto') ? ' border-red-400' : '' }}"
-                                type="date" name="dataprimeirocontacto" value="{{ old('dataprimeirocontacto', $empresa->dataprimeirocontacto) }}" />
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('dataprimeirocontacto') ? ' border-red-400' : '' }}"
+                                type="date" name="dataprimeirocontacto"
+                                value="{{ old('dataprimeirocontacto', $empresa->dataprimeirocontacto) }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="persoa_contacto"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('persoa_contacto') ? ' text-red-400' : '' }}">{{ __('Persoa de contacto') }}</label>
                             <input id="persoa_contacto"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('persoa_contacto') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('persoa_contacto') ? ' border-red-400' : '' }}"
                                 type="text" name="persoa_contacto" value="{{ old('persoa_contacto') }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="ofertas_contratacion"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('ofertas_contratacion') ? ' text-red-400' : '' }}">{{ __('Ofertas de contratación') }}</label>
                             <input id="ofertas_contratacion"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('ofertas_contratacion') ? ' border-red-400' : '' }}"
-                                type="text" name="ofertas_contratacion" value="{{ old('ofertas_contratacion') }}" />
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('ofertas_contratacion') ? ' border-red-400' : '' }}"
+                                type="text" name="ofertas_contratacion"
+                                value="{{ old('ofertas_contratacion') }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="ofertas_formacion"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('ofertas_formacion') ? ' text-red-400' : '' }}">{{ __('Ofertas de formación') }}</label>
                             <input id="ofertas_formacion"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('ofertas_formacion') ? ' border-red-400' : '' }}"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('ofertas_formacion') ? ' border-red-400' : '' }}"
                                 type="text" name="ofertas_formacion" value="{{ old('ofertas_formacion') }}" />
                         </div>
-                        <div class="py-2">
+                        <div class="col-span-2">
                             <label for="orientador_id"
                                 class="block font-medium text-sm text-gray-700{{ $errors->has('orientador_id') ? ' text-red-400' : '' }}">{{ __('Orientador/a') }}</label>
                             <input id="orientador_id"
-                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('orientador_id') ? ' border-red-400' : '' }}"
-                                type="text" name="orientador_id" value="{{ old('orientador_id', $empresa->orientador_id) }}" />
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('orientador_id') ? ' border-red-400' : '' }}"
+                                type="text" name="orientador_id"
+                                value="{{ old('orientador_id', $empresa->orientador_id) }}" />
                         </div>
-                        <label for="observacions"
-                            class="block font-medium text-sm text-gray-700{{ $errors->has('observacions') ? ' text-red-400' : '' }}">{{ __('Observacións') }}</label>
-                        <input id="notas"
-                            class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full{{ $errors->has('observacions') ? ' border-red-400' : '' }}"
-                            type="text" name="observacions" value="{{ old('observacions', $empresa->observacions) }}" />
-                </div>
+
+                        <div class="col-span-2">
+                            <label for="observacions"
+                                class="block font-medium text-sm text-gray-700{{ $errors->has('observacions') ? ' text-red-400' : '' }}">{{ __('Observacións') }}</label>
+                            <input id="notas"
+                                class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50  {{ $errors->has('observacions') ? ' border-red-400' : '' }}"
+                                type="text" name="observacions"
+                                value="{{ old('observacions', $empresa->observacions) }}" />
+                        </div>
+                    </div>
 
 
-                {{-- Botón actualizar --}}
-                <div class="flex justify-end mt-4">
-                    <button type='submit'
-                        class='inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150'>
-                        {{ __('Actualizar') }}
-                    </button>
+
+
+                        {{-- Botón actualizar --}}
+                        <div class="flex justify-end mt-4">
+                            <button type='submit'
+                                class='inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150'>
+                                {{ __('Actualizar') }}
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
-    </div>
-    </div>
+
 </x-app-layout>
